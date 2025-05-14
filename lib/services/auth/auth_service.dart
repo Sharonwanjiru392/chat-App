@@ -19,11 +19,12 @@ class AuthService{
   //sign up
   Future<UserCredential> signUpWithEmailPassword(String email, password)async{
     try{
-
+      //create user
       UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
+      //save user info in a separate docs
       return userCredential;
     } on FirebaseAuthException catch (e) 
     {

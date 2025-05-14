@@ -1,3 +1,42 @@
+ Features
+🔐 User Authentication (Sign Up / Login)
+
+💬 Real-time messaging
+
+📸 Send text, images (optional if implemented)
+
+📡 Firebase backend integration
+
+🌓 Light and Dark mode support
+
+✅ Responsive and smooth UI
+
+🛠️ Tech Stack
+Flutter – for building cross-platform UI
+
+Firebase Auth – for user authentication
+
+Cloud Firestore – for real-time database
+
+Firebase Storage – for image sharing (optional)
+
+Provider / Riverpod / Bloc – for state management (whichever you're using)
+
+🚀 Getting Started
+Clone the repository
+git clone https://github.com/
+
+Install dependencies
+flutter pub get
+
+Connect your Firebase project and configure it
+
+Run the app
+flutter run
+
+
+
+
 # chat_app
 
 A new Flutter project.

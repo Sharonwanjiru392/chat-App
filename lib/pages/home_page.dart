@@ -16,6 +16,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // ignore: deprecated_member_use
+      backgroundColor: Theme.of(context).colorScheme.background,
+
       appBar: AppBar(title: Text("home page"),
       backgroundColor: Colors.transparent,
       foregroundColor: Colors.grey,

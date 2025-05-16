@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ThemeData LightMode = ThemeData(
+ThemeData lightMode = ThemeData(
   colorScheme: ColorScheme.light(
     // ignore: deprecated_member_use
     background: Colors.grey.shade300,

@@ -1,3 +1,4 @@
+import 'package:chat_app/components/chat_bubble.dart';
 import 'package:chat_app/services/auth/auth_service.dart';
 import 'package:chat_app/services/chats/chat_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,7 +31,12 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(receiverEmail)),
+      appBar: AppBar(title: Text(receiverEmail),
+      backgroundColor: Colors.transparent,
+      foregroundColor: Colors.grey,
+      elevation: 0,
+      ),
+      
       body: Column(
         children: [
           //display all messages
@@ -83,7 +89,7 @@ class ChatPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
-          Text(data["message"]),
+          ChatBubble(message: data["message"], isCurrentUser: isCurrentUser)
         ],
       ));
   }
@@ -91,7 +97,7 @@ class ChatPage extends StatelessWidget {
   //build message input
   Widget _buildUserInput() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(bottom: 50.0),
       child: Row(children: [
         //text field should take up most of the space
         Expanded(
@@ -104,9 +110,16 @@ class ChatPage extends StatelessWidget {
           ),
         ),
         //send button
-        IconButton(
-          onPressed: sendMessage,
-          icon: const Icon(Icons.arrow_upward),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            shape: BoxShape.circle,
+          ),
+          child: IconButton(
+            onPressed: sendMessage,
+            icon: const Icon(Icons.arrow_upward),
+            color: Colors.white,
+          ),
         ),
         ],
       ),
